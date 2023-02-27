@@ -32,7 +32,6 @@
         "src",
         "types",
         "test",
-        "codegen",
         "/src/**/*.d.ts"
     ]
 }

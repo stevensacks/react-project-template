@@ -1,9 +1,6 @@
-.cache
-package-lock.json
-dist
+yarn.lock
 coverage
 .editorconfig
 .gitignore
-.stylelintignore
 .eslintignore
 .prettierignore
