@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply bg-white text-gray-900;
+    @apply selection:bg-blue-300 selection:text-white;
+
+    &.dark {
+        @apply bg-gray-900 text-white;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@media (min-width: 640px) {
+    html,
+    body {
+        height: auto;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .mobile-scroll-box {
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.js-focus-visible :focus:not(.focus-visible),
+[data-js-focus-visible] :focus:not([data-focus-visible-added]) {
+    box-shadow: none;
+    outline: none;
+}

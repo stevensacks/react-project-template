@@ -1,0 +1,148 @@
+.spinner {
+    @apply relative;
+
+    --loader-color: #1d1a16;
+
+    border-radius: 50%;
+    animation: spin 1.4s infinite linear;
+    background: linear-gradient(
+        to right,
+        var(--loader-color) 10%,
+        rgb(29 26 22 / 0%) 42%
+    );
+    transform: translateZ(0);
+
+    &::before {
+        @apply absolute top-0 left-0 h-1/2 w-1/2 bg-gray-900;
+
+        border-radius: 100% 0 0;
+        content: '';
+    }
+
+    &::after {
+        @apply absolute inset-0 m-auto h-3/4 w-3/4 bg-white;
+
+        border-radius: 50%;
+        content: '';
+    }
+
+    &.primary {
+        --loader-color: #fff;
+
+        &::before {
+            @apply bg-white;
+        }
+
+        &::after {
+            @apply bg-blue-700;
+        }
+    }
+
+    &.secondary {
+        --loader-color: #fff;
+
+        &::before {
+            @apply bg-blue-700;
+        }
+
+        &::after {
+            @apply bg-white;
+        }
+    }
+
+    &.tertiary {
+        --loader-color: #fff;
+
+        &::before {
+            @apply bg-gray-500;
+        }
+
+        &::after {
+            @apply bg-white;
+        }
+    }
+
+    &.destructive {
+        --loader-color: #fff;
+
+        &::before {
+            @apply bg-white;
+        }
+
+        &::after {
+            @apply bg-red-500;
+        }
+    }
+}
+
+:global .dark {
+    :local .spinner {
+        --loader-color: #fff;
+
+        &::before {
+            @apply bg-white;
+        }
+
+        &::after {
+            @apply bg-gray-900;
+        }
+
+        &.primary {
+            --loader-color: #1d1a16;
+
+            &::before {
+                @apply bg-gray-900;
+            }
+
+            &::after {
+                @apply bg-blue-700;
+            }
+        }
+
+        &.secondary {
+            --loader-color: #c1a06c;
+
+            &::before {
+                @apply bg-blue-500;
+            }
+
+            &::after {
+                @apply bg-gray-900;
+            }
+        }
+
+        &.tertiary {
+            --loader-color: #c9c3ba;
+
+            &::before {
+                @apply bg-gray-300;
+            }
+
+            &::after {
+                @apply bg-gray-900;
+            }
+        }
+
+        &.destructive {
+            --loader-color: #fff;
+
+            &::before {
+                @apply bg-white;
+            }
+
+            &::after {
+                @apply bg-red-500;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+declare HAS_SRC_CHANGED=$(git diff --cached --name-only --diff-filter=ACM | grep 'src/')
+declare HAS_TEST_CHANGED=$(git diff --cached --name-only --diff-filter=ACM | grep 'test/')
+declare HAS_STORYBOOK_CHANGED=$(git diff --cached --name-only --diff-filter=ACM | grep '.storybook/')
+
+if [[ $HAS_SRC_CHANGED || $HAS_TEST_CHANGED || $HAS_STORYBOOK_CHANGED ]]
+then
+	npm run lint:tsc
+	npx lint-staged
+	npm run test:lint-staged
+fi

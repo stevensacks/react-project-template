@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "test/*": [
+                "../test/*"
+            ]
+        },
+        "target": "esnext",
+        "declaration": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "jsx": "react-jsx",
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true
+    },
+    "include": [
+        "src",
+        "types",
+        "test",
+        "codegen",
+        "/src/**/*.d.ts"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-idiomatic-order",
+        "stylelint-config-tailwindcss"
+    ],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "no-descending-specificity": null,
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": ["global", "local"]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": "**/*.module.css",
+            "rules": {
+                "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$"
+            }
+        }
+    ],
+    "ignoreFiles": ["dist/**/*.css", "coverage/**/*.css"]
+}
