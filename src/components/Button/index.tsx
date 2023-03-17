@@ -63,7 +63,7 @@ export const KINDS: Record<Kind, string> = {
     custom: '',
     destructive: 'border border-red-500 bg-red-500 font-semibold text-white',
     primary:
-        'border border-blue-500 bg-blue-700 font-semibold text-white dark:text-gray-900',
+        'border border-blue-700 bg-blue-700 font-semibold text-white dark:text-gray-900',
     secondary: 'border border-blue-700 text-blue-700 dark:text-white',
     tertiary:
         'border border-gray-300 text-gray-700 dark:border-gray-700 dark:text-gray-300',
@@ -102,7 +102,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     KINDS[kind],
                     icon
                         ? children
-                            ? `flex items-center ${ICON_TEXT_SIZES[size]}`
+                            ? ICON_TEXT_SIZES[size]
                             : ICON_SIZES[size]
                         : SIZES[size],
                     loading
@@ -128,6 +128,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                                 title={loading}
                             />
                         </div>
+                    </div>
+                ) : iconComponent && children ? (
+                    <div className="flex items-center">
+                        {iconComponent}
+                        {children}
                     </div>
                 ) : (
                     <>
