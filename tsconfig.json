@@ -6,18 +6,15 @@
                 "../test/*"
             ]
         },
-        "target": "esnext",
+        "target": "ESNext",
         "declaration": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "importHelpers": true,
         "jsx": "react-jsx",
-        "lib": [
-            "dom",
-            "esnext"
-        ],
-        "module": "esnext",
-        "moduleResolution": "node",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "module": "ESNext",
+        "moduleResolution": "Node",
         "outDir": "dist",
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
@@ -30,7 +27,6 @@
     },
     "include": [
         "src",
-        "types",
         "test",
         "/src/**/*.d.ts"
     ]

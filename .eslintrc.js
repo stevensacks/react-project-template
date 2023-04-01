@@ -180,6 +180,8 @@ module.exports = {
     root: true,
     env: {
         browser: true,
+        node: true,
+        mocha: true,
         es6: true,
     },
     settings: {
